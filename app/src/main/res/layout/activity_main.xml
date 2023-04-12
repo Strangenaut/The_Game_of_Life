@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clMain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.MainActivity">
+
+    <ImageView
+        android:id="@+id/ivField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/llTools"
+        android:layout_width="48dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/btnToggleTools"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <Button
+            android:id="@+id/btnTimelapse"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:foreground="@android:drawable/ic_media_play"
+            android:foregroundGravity="center"
+            android:foregroundTint="@color/white"
+            android:onClick="onClickTimeLapse" />
+
+        <Button
+            android:id="@+id/btnUpdateGeneration"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:foreground="@android:drawable/stat_notify_sync_noanim"
+            android:foregroundGravity="center"
+            android:foregroundTint="@color/white"
+            android:onClick="onClickNewGeneration" />
+
+        <Button
+            android:id="@+id/btnErase"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:backgroundTint="@color/lightRed"
+            android:foreground="@android:drawable/ic_input_delete"
+            android:foregroundGravity="center"
+            android:foregroundTint="@color/white"
+            android:onClick="onClickEraser" />
+
+        <Button
+            android:id="@+id/btnClear"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:foreground="@android:drawable/ic_delete"
+            android:foregroundGravity="center"
+            android:foregroundTint="@color/white"
+            android:onClick="onClickClearField" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnToggleTools"
+        android:layout_width="48dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/lightGray"
+        android:foreground="@android:drawable/arrow_up_float"
+        android:foregroundGravity="center"
+        android:onClick="onClickToggleTools"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnToggleSettings"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/lightGray"
+        android:foreground="@android:drawable/ic_menu_sort_by_size"
+        android:foregroundGravity="center"
+        android:foregroundTint="@color/white"
+        android:onClick="onClickToggleSettings"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TableLayout
+        android:id="@+id/tlSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/border"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/btnToggleSettings"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvFieldWidth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/widthLabel"
+                android:textColor="@android:color/secondary_text_light" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <SeekBar
+                android:id="@+id/sbFieldWidth"
+                android:layout_width="169dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+                android:min="1"
+                android:progressTint="@color/lightRed"
+                android:thumbTint="@color/lightCoral" />
+
+            <EditText
+                android:id="@+id/etFieldWidth"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="8dp"
+                android:autofillHints="1"
+                android:backgroundTint="@color/lightCoral"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="3"
+                android:textAlignment="center"
+                android:textColorHighlight="@color/lightCoral"
+                android:textColorLink="@color/lightCoral"
+                android:textSize="14sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvFieldHeight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/heightLabel"
+                android:textColor="@android:color/secondary_text_light" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <SeekBar
+                android:id="@+id/sbFieldHeight"
+                android:layout_width="169dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+                android:min="1"
+                android:progressTint="@color/lightRed"
+                android:thumbTint="@color/lightCoral" />
+
+            <EditText
+                android:id="@+id/etFieldHeight"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="8dp"
+                android:autofillHints="1"
+                android:backgroundTint="@color/lightCoral"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="3"
+                android:textAlignment="center"
+                android:textColorHighlight="@color/lightCoral"
+                android:textColorLink="@color/lightCoral"
+                android:textSize="14sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvTimelapseSpeed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/speedLabel"
+                android:textColor="@android:color/secondary_text_light" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <SeekBar
+                android:id="@+id/sbTimelapseSpeed"
+                android:layout_width="169dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+                android:max="99"
+                android:min="1"
+                android:progressTint="@color/lightRed"
+                android:thumbTint="@color/lightCoral" />
+
+            <EditText
+                android:id="@+id/etTimelapseSpeed"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="8dp"
+                android:autofillHints="1"
+                android:backgroundTint="@color/lightCoral"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="2"
+                android:textAlignment="center"
+                android:textColorHighlight="@color/lightCoral"
+                android:textColorLink="@color/lightCoral"
+                android:textSize="14sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Switch
+                android:id="@+id/swFlatTorus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="8dp"
+                android:onClick="onClickIsTorus"
+                android:text="@string/flatTorusLabel"
+                android:textColor="@android:color/secondary_text_light"
+                android:textColorHighlight="@color/lightCoral"
+                android:textColorLink="@color/lightRed"
+                android:thumbTint="@color/white_1"
+                android:trackTint="@color/darkGray" />
+        </TableRow>
+
+    </TableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

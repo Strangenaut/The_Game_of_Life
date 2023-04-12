@@ -1,0 +1,32 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.TheGameOfLife" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/lightCoral</item>
+        <item name="colorPrimaryVariant">@color/darkGray</item>
+        <item name="colorOnPrimary">@color/black</item>
+
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/lightRed</item>
+        <item name="colorSecondaryVariant">@color/lightRed</item>
+        <item name="colorOnSecondary">@color/white</item>
+
+        <!-- Background color -->
+        <item name="android:colorBackground">@color/white_1</item>
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/white_1</item>
+
+        <!-- Navigation bar color -->
+        <item name="android:navigationBarColor">@color/white_1</item>
+    </style>
+
+    <style name="Theme.TheGameOfLife.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.TheGameOfLife.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.TheGameOfLife.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+</resources>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">The Game of Life</string>
+
+    <string name="widthLabel">Width, number of cells</string>
+    <string name="heightLabel">Height, number of cells</string>
+    <string name="speedLabel">Timelapse speed, FPS</string>
+    <string name="flatTorusLabel">Field type: Flat / Torus</string>
+</resources>
